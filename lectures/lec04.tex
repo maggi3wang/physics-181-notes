@@ -1,0 +1,111 @@
+\subsection{Introduction}
+
+In the last lecture, we found that the total number of states of the gas for large $N$ was 
+
+$$\Omega(N, V, E) = 2 e^{\frac{3}{2} N} (\frac{V}{\Delta q}{\Delta} p)^3)^N (\frac{4 \pi m E}{3N})^{\frac{3N}{2}}$$
+
+The Maxwell-Boltzmann velocity distribution: $$P(\vec{v}) = (\frac{3m}{4 \pi \bar{\epsilon}})^{3/2} e^{-\frac{3}{4\bar{\epsilon}} m \vec{v}^2}$$
+
+where $\bar{\epsilon} = \frac{E}{N}$.
+
+The number of states $\Omega(N, V, E)$ is an extremely rapidly varying function of energy, $\Omega \sim E^{3N/2}$.
+
+\subsection{Temperature}
+
+Total energy of both gases is $E$, then the number of states with this partitioning is 
+
+$$\Omega(E, E_1) = \Omega_1(E_1) \Omega_2(E-E_1)$$
+
+where $\Omega_1(E)$ and $\Omega_2(E)$ are the number of microstates of the two gases separately.
+
+The postulate of equal a priori probabilities implies that the probability of finding a system in a set of states is directly proportional to the number of states:
+
+$$P(E, E_1) = C \cross \Omega_1(E_1) \Omega_2(E-E_1)$$
+
+for some $C$, determined by normalizing the probabilities so that they integrate to 1.
+
+Writing $\frac{1}{f} \dv{f}{x} = \dv{\ln f}{x}$, we have
+
+$$\left. \pdv{\ln \Omega_1(E)}{E} \right\vert_{E = \langle E_1 \rangle} = \left. \pdv {\ln \Omega_2 (E)}{E} \right\vert_{E = \langle E_2 \rangle}$$
+
+This motivates us to define the quantity 
+
+$$\beta \equiv \pdv{\ln{\Omega}(E)}{E}$$
+
+This implies that $\beta_1 = \beta_2$ in equilibrium. Any two systems that can exchange energy will be at the same temperature in equilibrium.
+
+$$\beta = \frac{1}{k_B T}$$
+where $T$ is the temperature and $k_B = 1.38 \cross 10^{-23} \frac{J}{K}$ is the Boltzmann's constant that converts units from temperature to energy.
+
+\subsubsection{Entropy}
+
+Entropy: $S(N, V, E) \equiv k_B \ln \Omega$
+
+We then find (Maxwell relations)
+$$\frac{1}{T} = \pdv{S(N,V,E)}{E}$$
+
+\subsection{Temperature of a monatomic ideal gas}
+
+Ideal gas: 
+\begin{enumerate}
+    \item The molecules are pointlike, so take up no volume
+    \item The molecule only interact with they collide (ignore van der Walls, Coulombic attraction, dipole-dipole, etc.)
+\end{enumerate}
+
+Most ideal gases are noble gases, helium, xenon, etc. (monatomic). Diatomic gases ($H_2$ or $O_2$ are close to ideal as well). Big diff is that diatomic and polyatomic molecules can store energy in vibrational and rotational modes, while monatomic gases only store energy in the kinetic motion of the atoms.
+
+Classical Sackur-Tetrode equation:
+
+$$S = N k_B [ \ln V + \frac{3}{2} \ln(\frac{4 \pi m E}{3N [\Delta p \Delta q]^2}) + \frac{3}{2} ]$$
+
+Correct Sackur-Tetrode equation:
+
+$$S = N k_B[\ln \frac{V}{N} + \frac{3}{2} \ln (\frac{4 \pi m E}{3Nh^2}) + \frac{5}{2}]$$
+
+Differences: 1. $\Delta p \Delta q$ is replaced by $h$. Follows from QM by the uncertainty principle. With $h$ instead of $\Delta p \Delta q$ we can talk about the absolute size of entropy, rather than just differences of entropy. $V$ gets replaced by $V/N$ and $\frac{3}{2}$ is replaced by $\frac{5}{2}$. Comes from replacing $V$ by $\frac{V}{N!}$ and using Stirling's approx.
+
+$$P(\vec{p}) = (\frac{1}{2 \pi m k_B T})^{3/2} e^{-\frac{1}{k_BT} \frac{\vec{p}^2}{2m}}$$
+
+\subsection{Equipartition theorem}
+
+For a monatomic ideal gas, the energy is quadratic in all the momenta:
+
+$$E = \frac{1}{2m} [ p^2_{1x} + \cdots + p^2_{Nx} + p^2_{1y} + \cdots + p^2_{Ny} + p^2_{1z} + \cdots + p^2_{Nz}$$
+
+There are $3N$ components in the sum and each gets $\frac{1}{2} k_B T$ energy on average, so the total energy is $E = \frac{3}{2} N k_B T$.
+
+Equipartition theorem: in equilibrium, the available energy is distributed equally among available quadratic modes of any sistem, each getting $\frac{1}{2} k_B T$
+
+Mode: set of excitations of the same system (like momentum, or vibration, or rotation, or normal modes on a string).
+
+\subsubsection{Non-quadratic modes}
+
+No matter how the energy is stored, 
+
+$$P(\epsilon) \propto e^{-\frac{\epsilon}{k_B T}}$$
+
+\subsection{Heat capacity}
+
+Heat capacity at constant volume:
+
+$$C_V = (\pdv{E}{T})_V$$
+
+\subsubsection{Molecules}
+
+In gases of molecules, there are translational, rotational, and vibrational modes. 
+
+Typically, at room temperatures, only rotational and translational modes can be excited due to the $e^{-\epsilon/k_BT}$ factor, since typically $\epsilon_{\text{rot}} \lessapprox k_BT \lessapprox \epsilon_{\text{rot}}$.
+
+\subsubsection{Solids}
+
+\textbf{The law of Dulong and Petit}: the molar heat capacity of many metals is roughly constant.
+
+The \textbf{molar heat capacity} is the heat capacity per mole of a substance. Molar heat capacity is called \textbf{molar specific heat} and often denoted by $c$.
+
+\textbf{Mole}: Avagadro's number $N_A = 6.02 \cross 10^{23}$ of that thing
+
+\textbf{Ideal gas constant}: $R \equiv N_A k_B = 8.314 \frac{J}{\text{mol} \cdot K}$
+
+\textbf{Specific heat}: S = heat capacity per unit mass, in units $\frac{J}{kg * K}$
+
+$$S \equiv \frac{\Delta E}{m \Delta T} = \frac{C_V}{m}$$
